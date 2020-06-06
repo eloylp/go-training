@@ -57,7 +57,7 @@ func FromCSV(file string) (*xy, error) {
 	return ds, err
 }
 
-func Output(pf func(x float64) float64, ds *plotter.FieldXY, outFile string) error {
+func Output(pf func(x float64) float64, ds plotter.XYer, outFile string) error {
 	line := plotter.NewFunction(pf)
 	line.Color = color.RGBA{B: 255, A: 255}
 	p, err := plot.New()
