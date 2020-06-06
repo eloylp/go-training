@@ -38,17 +38,17 @@ func AssertReverseStringFunc(t *testing.T, f func(string) string) {
 }
 
 func TestReverseStringPreparedSlice(t *testing.T) {
-	AssertReverseStringFunc(t, reverse.ReverseStringPreparedSlice)
+	AssertReverseStringFunc(t, reverse.StringPreparedSlice)
 }
 
 func TestReverseStringIncrementalSlice(t *testing.T) {
-	AssertReverseStringFunc(t, reverse.ReverseStringRune)
+	AssertReverseStringFunc(t, reverse.StringRune)
 }
 
 func BenchmarkReverseStringPreparedSlice(b *testing.B) {
-	reverse.ReverseStringPreparedSlice("eloy")
+	reverse.StringPreparedSlice("eloy")
 }
 
 func BenchmarkReverseStringIncrementalSlice(b *testing.B) {
-	reverse.ReverseStringRune("eloy")
+	reverse.StringRune("eloy")
 }

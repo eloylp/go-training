@@ -5,9 +5,7 @@ func InsertionSort(list []int) {
 	for _, item := range list {
 		sorted = insert(sorted, item)
 	}
-	for ii, nn := range sorted {
-		list[ii] = nn
-	}
+	copy(list, sorted)
 }
 
 func insert(sorted []int, item int) []int {

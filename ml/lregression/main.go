@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/csv"
-	"fmt"
 	"gonum.org/v1/gonum/stat"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
@@ -19,7 +18,6 @@ func main() {
 		log.Fatal(err)
 	}
 	a, b := stat.LinearRegression(ds.X, ds.Y, nil, false)
-	fmt.Println("%.4v x  + %.4v\n", a, b)
 	plotFunc := func(x float64) float64 {
 		return a + b*x
 	}
@@ -59,7 +57,7 @@ func FromCSV(file string) (*xy, error) {
 	return ds, err
 }
 
-func Output(pf func(x float64) float64, ds *xy, outFile string) error {
+func Output(pf func(x float64) float64, ds *plotter.FieldXY, outFile string) error {
 	line := plotter.NewFunction(pf)
 	line.Color = color.RGBA{B: 255, A: 255}
 	p, err := plot.New()

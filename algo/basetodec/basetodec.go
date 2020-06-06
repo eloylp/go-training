@@ -26,7 +26,7 @@ var numbers = map[string]int{
 
 func BaseToDec(number string, base int) int {
 	var total int
-	number2 := reverse.ReverseStringRune(number)
+	number2 := reverse.StringRune(number)
 	for i, n := range number2 {
 		number := numbers[string(n)]
 		total += number * int(math.Pow(float64(base), float64(i)))

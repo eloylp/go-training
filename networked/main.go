@@ -15,6 +15,9 @@ func main() {
 			log.Fatal(err)
 		}
 		l, err := net.ListenTCP("tcp", addr)
+		if err != nil {
+			log.Fatal(err)
+		}
 		for {
 			c, err := l.Accept()
 			if err != nil {
@@ -45,7 +48,9 @@ func main() {
 	}
 	defer c.Close()
 	for {
-		c.Write([]byte("ping"))
+		if _, err := c.Write([]byte("ping")); err != nil {
+			log.Fatal(err)
+		}
 		b := make([]byte, 1024)
 		_, _ = c.Read(b)
 		fmt.Println(string(b))
