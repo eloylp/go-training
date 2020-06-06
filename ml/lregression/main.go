@@ -45,16 +45,16 @@ func FromCSV(file string) (*xy, error) {
 		Y: make([]float64, size),
 	}
 	for i, v := range records {
-		y, err := strconv.ParseFloat(v[0], 64)
-		if err != nil {
-			return nil, err
-		}
-		ds.Y[i] = y
 		x, err := strconv.ParseFloat(v[1], 64)
 		if err != nil {
 			return nil, err
 		}
 		ds.X[i] = x
+		y, err := strconv.ParseFloat(v[0], 64)
+		if err != nil {
+			return nil, err
+		}
+		ds.Y[i] = y
 	}
 	return ds, err
 }
