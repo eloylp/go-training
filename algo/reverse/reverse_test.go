@@ -1,7 +1,7 @@
 package reverse_test
 
 import (
-	"github.com/eloylp/go-training/reverse"
+	"github.com/eloylp/go-training/algo/reverse"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

@@ -2,7 +2,7 @@ package gdc_test
 
 import (
 	"fmt"
-	"github.com/eloylp/go-training/gdc"
+	"github.com/eloylp/go-training/algo/gdc"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -29,8 +29,8 @@ func TestGDC(t *testing.T) {
 func TestEuclideanGDC(t *testing.T) {
 
 	samples := []struct {
-		A    int
-		B    int
+		A        int
+		B        int
 		Expected int
 	}{
 		{10, 5, 5},

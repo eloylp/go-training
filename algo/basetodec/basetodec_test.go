@@ -1,7 +1,7 @@
 package basetodec_test
 
 import (
-	"github.com/eloylp/go-training/basetodec"
+	"github.com/eloylp/go-training/algo/basetodec"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

@@ -1,7 +1,7 @@
 package twothatsum_test
 
 import (
-	"github.com/eloylp/go-training/twothatsum"
+	"github.com/eloylp/go-training/algo/twothatsum"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

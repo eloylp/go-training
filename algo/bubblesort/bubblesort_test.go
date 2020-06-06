@@ -2,7 +2,7 @@ package bubblesort_test
 
 import (
 	"fmt"
-	"github.com/eloylp/go-training/bubblesort"
+	"github.com/eloylp/go-training/algo/bubblesort"
 	"github.com/stretchr/testify/assert"
 	"math/rand"
 	"testing"
@@ -18,7 +18,7 @@ func TestBubbleSortInt(t *testing.T) {
 }
 
 func BenchmarkBubbleSortInt(b *testing.B) {
-	for _, n := range []int{100, 400, 800, 1600 , 3200}{
+	for _, n := range []int{100, 400, 800, 1600, 3200} {
 		b.Run(fmt.Sprintf("Series of %v", n), func(b *testing.B) {
 			sample := rand.Perm(n)
 			b.ResetTimer()

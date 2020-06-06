@@ -1,7 +1,7 @@
 package insertionsort_test
 
 import (
-	"github.com/eloylp/go-training/insertionsort"
+	"github.com/eloylp/go-training/algo/insertionsort"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

@@ -1,7 +1,7 @@
 package basetodec
 
 import (
-	"github.com/eloylp/go-training/reverse"
+	"github.com/eloylp/go-training/algo/reverse"
 	"math"
 )
 

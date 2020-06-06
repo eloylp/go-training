@@ -1,4 +1,4 @@
- package dectobase
+package dectobase
 
 import (
 	"strconv"

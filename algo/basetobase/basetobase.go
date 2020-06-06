@@ -1,8 +1,8 @@
 package basetobase
 
 import (
-	"github.com/eloylp/go-training/basetodec"
-	"github.com/eloylp/go-training/dectobase"
+	"github.com/eloylp/go-training/algo/basetodec"
+	"github.com/eloylp/go-training/algo/dectobase"
 )
 
 func BaseToBase(input string, basea, baseb int) string {

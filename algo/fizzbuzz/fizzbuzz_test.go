@@ -1,7 +1,7 @@
 package fizzbuzz_test
 
 import (
-	"github.com/eloylp/go-training/fizzbuzz"
+	"github.com/eloylp/go-training/algo/fizzbuzz"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

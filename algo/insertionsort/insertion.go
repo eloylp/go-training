@@ -2,7 +2,7 @@ package insertionsort
 
 func InsertionSort(list []int) {
 	var sorted []int
-	for _, item :=  range list {
+	for _, item := range list {
 		sorted = insert(sorted, item)
 	}
 	for ii, nn := range sorted {

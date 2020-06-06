@@ -1,7 +1,7 @@
 package dectobase_test
 
 import (
-	"github.com/eloylp/go-training/dectobase"
+	"github.com/eloylp/go-training/algo/dectobase"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

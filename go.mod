@@ -11,5 +11,8 @@ require (
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/stretchr/testify v1.5.1
-	golang.org/x/net v0.0.0-20200114155413-6afb5195e5aa // indirect
+	golang.org/x/exp v0.0.0-20200513190911-00229845015e // indirect
+	golang.org/x/tools v0.0.0-20200530233709-52effbd89c51 // indirect
+	gonum.org/v1/gonum v0.7.0
+	gonum.org/v1/plot v0.7.0
 )

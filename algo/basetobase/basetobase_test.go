@@ -1,7 +1,7 @@
 package basetobase_test
 
 import (
-	"github.com/eloylp/go-training/basetobase"
+	"github.com/eloylp/go-training/algo/basetobase"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
