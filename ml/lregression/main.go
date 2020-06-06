@@ -20,9 +20,8 @@ func main() {
 	}
 	a, b := stat.LinearRegression(ds.X, ds.Y, nil, false)
 	fmt.Println("%.4v x  + %.4v\n", a, b)
-	a, b = b, a
 	plotFunc := func(x float64) float64 {
-		return a*x + b
+		return a + b*x
 	}
 	if err := Output(plotFunc, ds, "out.svg"); err != nil {
 		log.Fatal(err)
