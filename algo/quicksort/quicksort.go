@@ -2,27 +2,25 @@ package quicksort
 
 import (
 	"fmt"
+	"math/rand"
 )
 
-func Do(list []int) []int {
-	pi := (len(list) - 1) / 2
-	p := list[pi]
-	fmt.Printf("p: %v \n", p)
-	l1 := list[:pi]
-	l2 := list[pi+1:]
-	fmt.Printf("l1: %v \n", l1)
-	fmt.Printf("l2: %v \n", l2)
-
-	sortPart(l1, p)
-	sortPart(l2, p)
-	result := append(append(l1, p), l2...)
-	return result
-}
-
-func sortPart(iterList []int, p int) {
-	for i, j := 0, len(iterList)-1; i < len(iterList); i, j = i+1, j-1 {
-		if iterList[i] > p && iterList[j] < p {
-			iterList[i], iterList[j] = iterList[j], iterList[i]
+func Do(a []int) []int {
+	if len(a) < 2 {
+		return a
+	}
+	left, right := 0, len(a)-1
+	pi := rand.Int() % len(a)
+	fmt.Println(pi)
+	a[pi], a[right] = a[right], a[pi]
+	for i := range a {
+		if a[i] < a[right] {
+			a[i], a[left] = a[left], a[i]
+			left++
 		}
 	}
+	a[left], a[right] = a[right], a[left]
+	Do(a[:left])
+	Do(a[left+1:])
+	return a
 }
