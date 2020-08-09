@@ -1,7 +1,6 @@
 package quicksort
 
 import (
-	"fmt"
 	"math/rand"
 )
 
@@ -11,7 +10,6 @@ func Do(a []int) []int {
 	}
 	left, right := 0, len(a)-1
 	pi := rand.Int() % len(a)
-	fmt.Println(pi)
 	a[pi], a[right] = a[right], a[pi]
 	for i := range a {
 		if a[i] < a[right] {
