@@ -1,8 +1,10 @@
 package quicksort_test
 
 import (
+	"math/rand"
 	"reflect"
 	"testing"
+	"time"
 
 	"github.com/eloylp/go-training/algo/quicksort"
 )
@@ -22,4 +24,24 @@ func Test_order(t *testing.T) {
 			}
 		})
 	}
+}
+
+func BenchADoFunc(size int, sut func(a []int) []int) func(b *testing.B) {
+	return func(b *testing.B) {
+		r := rand.New(rand.NewSource(time.Now().Unix()))
+		numbers := make([]int, size)
+		for i := 0; i < size; i++ {
+			numbers = append(numbers, r.Intn(10000))
+		}
+		b.ReportAllocs()
+		b.ResetTimer()
+		for i := 0; i < b.N; i++ {
+			sut(numbers)
+		}
+	}
+}
+
+func BenchmarkDoFunctions(b *testing.B) {
+	b.Run("Benchmark Do", BenchADoFunc(10, quicksort.Do))
+	b.Run("Benchmark DoSimple", BenchADoFunc(10, quicksort.DoSimple))
 }

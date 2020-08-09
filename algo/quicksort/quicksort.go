@@ -22,3 +22,21 @@ func Do(a []int) []int {
 	Do(a[left+1:])
 	return a
 }
+
+func DoSimple(a []int) []int {
+	if len(a) < 2 {
+		return a
+	}
+	pi := rand.Int() % len(a)
+	vpi := a[pi]
+	var left []int
+	var right []int
+	for _, v := range a {
+		if v < vpi {
+			left = append(left, v)
+		} else if v > vpi {
+			right = append(right, v)
+		}
+	}
+	return append(append(DoSimple(left), vpi), DoSimple(right)...)
+}
